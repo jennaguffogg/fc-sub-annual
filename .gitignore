@@ -1,0 +1,17 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.tif
+*.xml
+*.nc
+*.gif
+*.png
+*.csv
+*.json
+results/
+*.joblib
+*.db
+*.geojson
+data/
+fc_subannual_tools/build
+fc_subannual_tools.egg-info/
+__pycache__
