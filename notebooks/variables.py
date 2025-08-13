@@ -68,3 +68,61 @@ MEASUREMENTS = [
 ]
 
 MEASUREMENTS_OBJ = [Measurement(**m) for m in MEASUREMENTS]
+
+LANDSAT_SENSOR_REGRESSION_COEFFICIENTS = {
+    "blue": [0.00041, 0.97470],
+    "green": [0.00289, 0.99779],
+    "red": [0.00274, 1.00446],
+    "nir": [0.00004, 0.98906],
+    "swir1": [0.00256, 0.99467],
+    "swir2": [-0.00327, 1.02551],
+}
+
+SENTINEL_SENSOR_REGRESSION_COEFFICIENTS = {
+    "blue": [-22.0, 0.9551],
+    "green": [31.0, 1.0582],
+    "red": [64.0, 0.9871],
+    "nir": [120.0, 1.0187],
+    "swir1": [79.0, 0.9528],
+    "swir2": [-42.0, 0.9688],
+}
+
+LANDSAT_BAND_MAPPING = (
+    {"load_bands": ("green", "red", "nir", "swir1", "swir2"), "rename": None},
+    {
+        "load_bands": (
+            "nbart_green",
+            "nbart_red",
+            "nbart_nir",
+            "nbart_swir_1",
+            "nbart_swir_2",
+        ),
+        "rename": {
+            "nbart_green": "green",
+            "nbart_red": "red",
+            "nbart_nir": "nir",
+            "nbart_swir_1": "swir1",
+            "nbart_swir_2": "swir2",
+        },
+    },
+)
+
+SENTINEL_BAND_MAPPING = (
+    {"load_bands": ("green", "red", "nir", "swir1", "swir2"), "rename": None},
+    {
+        "load_bands": (
+            "nbart_green",
+            "nbart_red",
+            "nbart_nir_1",
+            "nbart_swir_2",
+            "nbart_swir_3",
+        ),
+        "rename": {
+            "nbart_green": "green",
+            "nbart_red": "red",
+            "nbart_nir_1": "nir",
+            "nbart_swir_2": "swir1",
+            "nbart_swir_3": "swir2",
+        },
+    },
+)
